@@ -37,5 +37,5 @@ jobs:
         uses: azure/webapps-deploy@v3
         with:
           app-name: ksaitestwebapp
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
           package: release.zip
