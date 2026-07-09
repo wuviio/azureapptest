@@ -27,6 +27,14 @@ def hello():
        print('Request for hello page received with no name or blank name -- redirecting')
        return redirect(url_for('index'))
 
+@app.route('/hp', methods=['POST'])
+def hp():
+   name = request.form.get('name')
+   if not name:
+       return redirect(url_for('index'))
+   print('Request for hp page received with name=%s' % name)
+   return render_template('hp.html', name=name)
+
 
 if __name__ == '__main__':
    app.run()
